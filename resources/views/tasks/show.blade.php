@@ -3,16 +3,26 @@
 @section('content')
 
 <!-- ここにページ毎のコンテンツを書く -->
-    <h1>id = {{ $tasks->id }}のメッセージ詳細ページ</h1>
+    <h1>id = {{ $tasks->id }}のタスクの詳細ページ</h1>
     
-    <h2>コンテンツ：{{ $tasks->content }}</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>id</th>
+            <td>{{ $tasks->id }}</td>
+        </tr>
 
+        <tr>
+            <th>タスク</th>
+            <td>{{ $tasks->content }}</td>
+        </tr>
+    </table>
+    
+    {!! link_to_route('tasks.edit','このタスク編集',['id' => $tasks->id], ['class' => 'btn btn-default'])!!}
 
-    {!! link_to_route('tasks.edit','このタスク編集',['id' => $tasks->id]) !!}
     
     {!! Form::model($tasks, ['route' => ['tasks.destroy', $tasks->id], 'method' => 'delete']) !!}
-        {!! Form::submit('削除') !!}
+        {!! Form::submit('削除',['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
-
-
+    
+    
 @endsection
