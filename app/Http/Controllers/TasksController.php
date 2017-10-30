@@ -52,12 +52,14 @@ class TasksController extends Controller
     {
         //add-10282151
         $this->validate($request,[
+            'status' => 'required|max:10',
             'content' => 'required|max:255',
             ]);
         
         //add-10281610
         
         $tasks = new Tasks();
+        $tasks ->status =$request->status;
         $tasks->content = $request->content;
         $tasks->save();
         
@@ -109,12 +111,14 @@ class TasksController extends Controller
     {
         //add-10282158
         $this->validate($request,[
+            'status' => 'required|max:10',
             'content' => 'required | max:255',
         ]);
             
         
         //add-10281654
         $tasks = tasks::find($id);
+        $tasks ->status = $request->status;
         $tasks->content = $request->content;
         $tasks->save();
 
