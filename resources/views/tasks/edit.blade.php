@@ -8,7 +8,8 @@
     
 
     <div class="row">
-          <div class="col-xs-12 col-sm-ofset-2 col-sm-8 col-md-ofset-2 col-md-8 col-lg-ofset-3 col-lg-6">
+        
+        <div class="col-xs-12 col-sm-ofset-2 col-sm-8 col-md-ofset-2 col-md-8 col-lg-ofset-3 col-lg-6">
             {!! Form::model($tasks, ['route' => ['tasks.update', $tasks->id], 'method' => 'put']) !!}
 
         
