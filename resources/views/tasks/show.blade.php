@@ -12,6 +12,10 @@
         </tr>
 
         <tr>
+            <th>ステータス</th>
+            <td>{{ $tasks->status }}</td>
+        </tr>
+        <tr>
             <th>タスク</th>
             <td>{{ $tasks->content }}</td>
         </tr>
